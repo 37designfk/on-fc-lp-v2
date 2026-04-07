@@ -1,0 +1,564 @@
+---
+import Layout from '../layouts/Layout.astro'
+const B = import.meta.env.BASE_URL.replace(/\/$/, '')
+const L = '#line'
+const CTA_ICON = `<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>`
+const CTA_LABEL = 'LINEで詳細を受け取る'
+---
+<Layout title="黄土よもぎ蒸し専門店ON｜FC加盟オーナー募集">
+
+<!-- スクロール進捗バー -->
+<div id="progress" class="fixed top-0 left-0 h-[3px] bg-[var(--accent-500)] z-[60] transition-none" style="width:0%"></div>
+
+<!-- ===== HERO ===== -->
+<section class="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img src={`${B}/images/yomogi-real.jpg`} alt="" class="w-full h-full object-cover object-[65%_center]" />
+    <div class="absolute inset-0 bg-gradient-to-b from-[#2c1810]/50 via-[#2c1810]/40 to-[#2c1810]/80"></div>
+  </div>
+
+  <div class="relative z-10 w-full text-center text-white px-5 py-20 max-w-2xl mx-auto">
+
+    <!-- 緊急性バッジ -->
+    <div class="fade-up mb-4">
+      <span class="tag bg-red-600/90 text-white text-[11px] border-0">0次募集 ─ 残りわずか</span>
+    </div>
+
+    <div class="fade-up mb-6">
+      <span class="tag bg-[var(--accent-300)]/20 text-[var(--accent-300)] border border-[var(--accent-300)]/30">FC加盟オーナー募集中</span>
+    </div>
+
+    <p class="fade-up fade-up-d1 text-white/80 text-sm md:text-base tracking-wide mb-5">副業・独立・第2の事業をお探しの方へ</p>
+
+    <h1 class="fade-up fade-up-d2 text-2xl md:text-3xl font-bold leading-snug mb-8" style="font-family:'Shippori Mincho',serif">
+      累計来店<span class="text-[var(--accent-300)]">2万人</span>超の<br />直営店が生み出した<br /><span class="text-[var(--accent-300)]">よもぎ蒸し</span>フランチャイズ
+    </h1>
+
+    <div class="fade-up fade-up-d3 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/15 py-8 px-6 mb-8">
+      <p class="text-white/60 text-xs tracking-widest mb-3">年間純利益（直営店実績 / 12ヶ月）</p>
+      <p class="num num--hero">542<span class="text-[0.35em] font-bold ml-1 tracking-normal">万円</span></p>
+      <div class="mt-5 flex items-center justify-center gap-3 text-sm font-medium">
+        <span class="text-white/90">技術不要</span>
+        <span class="text-[var(--accent-300)]">/</span>
+        <span class="text-white/90">1名運営</span>
+        <span class="text-[var(--accent-300)]">/</span>
+        <span class="text-white/90">500万円〜</span>
+      </div>
+      <p class="text-[var(--accent-300)] font-bold text-lg mt-3">1ヶ月目から黒字のサロンビジネス</p>
+    </div>
+
+    <div class="fade-up fade-up-d4 grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+      {[
+        ['35.6', '%', '利益率'],
+        ['14', 'ヶ月', '投資回収'],
+        ['65', '%', 'リピート率'],
+        ['1', '名', '運営人員'],
+      ].map(([val, unit, label]) => (
+        <div class="bg-white/8 rounded-xl py-4 px-3 border border-white/10">
+          <p class="text-2xl md:text-3xl font-black leading-none text-white">{val}<span class="text-xs font-bold text-white/60">{unit}</span></p>
+          <p class="text-white/45 text-[10px] mt-1.5 tracking-wider">{label}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="flex justify-center flex-col items-center">
+      <a href={L} class="cta"><Fragment set:html={CTA_ICON} />{CTA_LABEL}</a>
+      <p class="text-white/50 text-[11px] mt-2">無料・30秒で完了</p>
+      <p class="text-white/30 text-[10px] mt-1">※ 勧誘・押し売りは一切ありません</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 社会的証明バー ===== -->
+<div class="bg-[var(--primary-900)] text-white py-3 px-5 text-center">
+  <p class="text-xs"><span class="inline-block w-2 h-2 bg-green-400 rounded-full mr-1.5 animate-pulse"></span>現在 <strong class="text-[var(--accent-300)]" id="viewer-count">23</strong> 名がこのページを閲覧中</p>
+</div>
+
+<!-- ===== PAIN ===== -->
+<section class="sec bg-[var(--neutral-100)]">
+  <div class="narrow">
+    <h2 class="sec-title sec-title--center mb-10">こんなお悩みありませんか？</h2>
+    <div class="space-y-3">
+      {[
+        '副業を始めたいけど、何から手をつければいいか分からない',
+        '独立したいけど、特別な技術や資格を持っていない',
+        '投資に興味はあるけど、リスクが怖くて踏み出せない',
+        '好きなことを仕事にしたいけど、収益化できるか不安',
+        '手離れよく、利益率のいい事業を持ちたい',
+      ].map((t, i) => (
+        <div class="card flex items-start gap-3 p-5">
+          <span class="flex-shrink-0 w-6 h-6 rounded-md bg-[var(--accent-100)] text-[var(--accent-700)] flex items-center justify-center text-xs font-bold mt-0.5">{i + 1}</span>
+          <p class="text-sm leading-relaxed">{t}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section class="sec bg-[var(--primary-700)] text-white texture-washi">
+  <div class="narrow relative z-10">
+    <p class="text-[var(--accent-300)] text-xs font-bold tracking-widest mb-3 text-center">SOLUTION</p>
+    <h2 class="text-2xl md:text-[1.75rem] font-bold text-center leading-snug mb-3" style="font-family:'Shippori Mincho',serif">
+      そのお悩み、ONサロンなら<br />全て解消できます
+    </h2>
+    <p class="text-white/50 text-sm text-center mb-12">構造的に「失敗しにくい」ビジネスモデル</p>
+
+    <div class="space-y-4">
+      {[
+        { n: '01', t: '技術・資格は一切不要', d: 'ハーブを選んでもらい、お茶を出すだけ。施術ミスが構造的に起きない仕組みなので、未経験でも翌日から現場に立てます。' },
+        { n: '02', t: 'リスクが圧倒的に低い', d: '原価率8〜15%・1名運営・マンション1室で完結。初期投資500万円〜、14ヶ月で回収できる低リスクモデルです。' },
+        { n: '03', t: 'サブスク x 高リピートで安定', d: 'リピート率65%のサブスク型収益。新規集客に依存しないストックビジネスで、月ごとに売上が積み上がります。' },
+      ].map((s) => (
+        <div class="flex gap-4 p-5 rounded-xl bg-white/[0.06] border border-white/[0.08]">
+          <span class="flex-shrink-0 text-[var(--accent-300)] text-xs font-black tracking-wider mt-0.5">{s.n}</span>
+          <div>
+            <h3 class="font-bold mb-1.5">{s.t}</h3>
+            <p class="text-sm text-white/65 leading-relaxed">{s.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- 中間CTA #1 -->
+    <div class="mt-10 flex flex-col items-center">
+      <a href={L} class="cta"><Fragment set:html={CTA_ICON} />{CTA_LABEL}</a>
+      <p class="text-white/35 text-[10px] mt-2">無料・30秒で完了 / 勧誘なし</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ON ===== -->
+<section class="sec">
+  <div class="narrow">
+    <p class="text-[var(--accent-700)] text-xs font-bold tracking-widest mb-3">WHY ON</p>
+    <h2 class="sec-title mb-3">なぜONサロンのFCは選ばれるのか</h2>
+    <p class="text-sm text-[var(--neutral-500)] mb-12 pl-4">累計2万人が通い続ける理由 ── 3つの仕組み</p>
+
+    <div class="space-y-12">
+      <div class="md:flex md:gap-8 md:items-center">
+        <div class="md:w-2/5 mb-5 md:mb-0">
+          <img src={`${B}/images/yomogi-person.jpg`} alt="よもぎ蒸し施術" class="rounded-xl w-full aspect-[4/3] object-cover" />
+        </div>
+        <div class="md:w-3/5">
+          <span class="tag bg-[var(--accent-100)] text-[var(--accent-700)] mb-3">仕組み 01</span>
+          <h3 class="text-lg font-bold mb-2">集客・オペレーションを本部に完全丸投げOK</h3>
+          <p class="text-sm text-[var(--neutral-500)] leading-[1.85]">ハーブを選んでいただき、お茶を出すだけ。施術技術は一切不要なので、スタッフ研修も本部が完全サポート。開業前〜開業後まで、手間のかかる作業は<strong class="text-[var(--neutral-900)]">全て本部が担います。</strong></p>
+        </div>
+      </div>
+
+      <div class="md:flex md:flex-row-reverse md:gap-8 md:items-center">
+        <div class="md:w-2/5 mb-5 md:mb-0">
+          <img src={`${B}/images/salon-real.jpg`} alt="サロン内装" class="rounded-xl w-full aspect-[4/3] object-cover" />
+        </div>
+        <div class="md:w-3/5">
+          <span class="tag bg-[var(--accent-100)] text-[var(--accent-700)] mb-3">仕組み 02</span>
+          <h3 class="text-lg font-bold mb-2">マンション1室・1名で黒字化できる最小設計</h3>
+          <p class="text-sm text-[var(--neutral-500)] leading-[1.85]">初期投資500万円〜・原価率8〜15%。飲食FCの半分以下の人件費で損益分岐点が格段に低く、<strong class="text-[var(--neutral-900)]">1ヶ月目から黒字になれる設計</strong>です。</p>
+        </div>
+      </div>
+
+      <div class="md:flex md:gap-8 md:items-center">
+        <div class="md:w-2/5 mb-5 md:mb-0">
+          <img src={`${B}/images/hero-bg.avif`} alt="よもぎ蒸し" class="rounded-xl w-full aspect-[4/3] object-cover" />
+        </div>
+        <div class="md:w-3/5">
+          <span class="tag bg-[var(--accent-100)] text-[var(--accent-700)] mb-3">仕組み 03</span>
+          <h3 class="text-lg font-bold mb-2">属人性ゼロ！未経験でも現場に出なくてもOK</h3>
+          <p class="text-sm text-[var(--neutral-500)] leading-[1.85]">技術ミスが構造的に起きにくいから、誰がやっても同じ品質。<strong class="text-[var(--neutral-900)]">副業・兼業オーナーがすぐに現場を任せられる</strong>仕組みです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARISON ===== -->
+<section class="sec bg-[var(--accent-100)]">
+  <div class="narrow">
+    <p class="text-[var(--accent-700)] text-xs font-bold tracking-widest mb-3 text-center">COMPARISON</p>
+    <h2 class="sec-title sec-title--center mb-10">他業態FCとの比較</h2>
+
+    <div class="overflow-x-auto -mx-5 px-5">
+      <table class="w-full text-sm card overflow-hidden">
+        <thead>
+          <tr class="bg-[var(--primary-900)] text-white text-xs">
+            <th class="py-3.5 px-3 text-left font-bold">比較項目</th>
+            <th class="py-3.5 px-3 text-center font-bold bg-[var(--accent-700)] text-white">ONサロン</th>
+            <th class="py-3.5 px-3 text-center font-bold">飲食FC</th>
+            <th class="py-3.5 px-3 text-center font-bold">エステFC</th>
+          </tr>
+        </thead>
+        <tbody class="text-[var(--neutral-700)]">
+          {[
+            ['初期投資', '500万円〜', '1,000万円〜', '500万円〜'],
+            ['技術・資格', '不要', '調理経験推奨', '技術研修必須'],
+            ['必要人員', '1名', '3名〜', '2名〜'],
+            ['原価率', '8〜15%', '30〜35%', '15〜25%'],
+            ['投資回収', '約14ヶ月', '1.5〜3年', '1〜2年'],
+            ['副業対応', '可能', '困難', '困難'],
+          ].map(([label, on, food, esthe], i) => (
+            <tr class={`border-t border-gray-100 ${i % 2 === 1 ? 'bg-gray-50/40' : ''}`}>
+              <td class="py-3 px-3 font-medium text-[var(--neutral-900)]">{label}</td>
+              <td class="py-3 px-3 text-center tbl-highlight">{on}</td>
+              <td class="py-3 px-3 text-center text-[var(--neutral-500)]">{food}</td>
+              <td class="py-3 px-3 text-center text-[var(--neutral-500)]">{esthe}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 中間CTA #2 -->
+    <div class="mt-10 flex flex-col items-center">
+      <a href={L} class="cta"><Fragment set:html={CTA_ICON} />{CTA_LABEL}</a>
+      <p class="text-[var(--neutral-500)] text-[10px] mt-2">無料・30秒で完了</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTS ===== -->
+<section class="sec bg-white">
+  <div class="narrow">
+    <p class="text-[var(--accent-700)] text-xs font-bold tracking-widest mb-3 text-center">PROVEN RESULTS</p>
+    <h2 class="sec-title sec-title--center mb-4">直営店の実績データ</h2>
+    <p class="text-sm text-[var(--neutral-500)] text-center mb-10">直営4台モデル / 12ヶ月分</p>
+
+    <div class="grid grid-cols-2 gap-3 mb-8">
+      {[
+        ['1,521', '万円', '年間売上'],
+        ['542', '万円', '年間純利益'],
+        ['35.6', '%', '平均利益率'],
+        ['65', '%', 'リピート率'],
+      ].map(([val, unit, label]) => (
+        <div class="bg-[var(--accent-100)] rounded-xl p-5 text-center">
+          <p class="num num--lg">{val}<span class="text-base font-bold ml-0.5">{unit}</span></p>
+          <p class="text-[11px] text-[var(--neutral-500)] mt-2 tracking-wider">{label}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-xs text-[var(--neutral-500)] bg-[var(--neutral-100)] rounded-lg py-3 px-4">月次データ（売上・経費・純利益 12ヶ月分）はLINEで全公開</p>
+  </div>
+</section>
+
+<!-- ===== REVENUE SIM ===== -->
+<section class="sec bg-[var(--primary-700)] text-white texture-washi">
+  <div class="narrow text-center relative z-10">
+    <p class="text-[var(--accent-300)] text-xs font-bold tracking-widest mb-3">REVENUE SIMULATION</p>
+    <h2 class="text-2xl md:text-[1.75rem] font-bold mb-3" style="font-family:'Shippori Mincho',serif">収益シミュレーション</h2>
+    <p class="text-white/50 text-sm mb-10">直営店実績ベースの手堅い数字</p>
+
+    <div class="bg-white/[0.07] rounded-xl p-6 md:p-8 border border-white/[0.1] mb-8">
+      <p class="text-white/50 text-xs tracking-widest mb-3">1店舗の年間純利益</p>
+      <div class="flex items-baseline justify-center gap-3 flex-wrap">
+        <span class="text-4xl md:text-5xl font-black">542万円</span>
+        <span class="text-xl text-white/40 font-light">x</span>
+        <span class="text-4xl md:text-5xl font-black">3店舗</span>
+      </div>
+      <div class="mt-5 pt-5 border-t border-white/10">
+        <p class="text-white/40 text-xs tracking-widest mb-1">年収</p>
+        <p class="num num--xl">1,626<span class="text-xl font-bold ml-1">万円</span></p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-2 mb-8">
+      {[
+        ['500万円〜', '初期投資'],
+        ['14ヶ月', '投資回収'],
+        ['35.6%', '利益率'],
+      ].map(([val, label]) => (
+        <div class="py-3 border-t border-white/10 text-center">
+          <p class="font-bold text-sm">{val}</p>
+          <p class="text-[10px] text-white/35 mt-1">{label}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-2 mb-10">
+      {['低リスク', '低リソース', '高回収型'].map((t) => (
+        <span class="tag bg-white/10 text-white/70 border border-white/15">{t}</span>
+      ))}
+    </div>
+
+    <!-- 中間CTA #3 -->
+    <div class="flex flex-col items-center">
+      <a href={L} class="cta"><Fragment set:html={CTA_ICON} />{CTA_LABEL}</a>
+      <p class="text-white/35 text-[10px] mt-2">無料・30秒で完了 / 勧誘なし</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HANDS OFF ===== -->
+<section class="sec">
+  <div class="narrow">
+    <p class="text-[var(--accent-700)] text-xs font-bold tracking-widest mb-3">HANDS OFF</p>
+    <h2 class="sec-title mb-3">副業・兼業OK</h2>
+    <p class="text-[var(--primary-700)] font-bold mb-8 pl-4">あなたが現場に出ることなく経営できます</p>
+
+    <div class="bg-[var(--accent-100)] rounded-xl p-6 md:p-8">
+      <p class="text-sm text-[var(--neutral-700)] leading-[1.85] mb-6">ONサロンは「手離れの良さ」が最大の強みのひとつです。高度な施術技術が不要なため、スタッフを1名採用するだけでオーナーは現場に出る必要がありません。集客・マニュアル・システムは本部が整備済みです。</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {[
+          '副業・兼業でスタート可能',
+          '集客は本部がサポート',
+          'スタッフ研修マニュアル完備',
+          '技術指導は一切不要',
+        ].map((t) => (
+          <div class="flex items-center gap-2.5 bg-white rounded-lg px-4 py-3">
+            <span class="w-5 h-5 rounded-full bg-[var(--accent-700)] flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </span>
+            <span class="text-sm font-medium">{t}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FC COST（アンカリング強化） ===== -->
+<section class="sec bg-[var(--neutral-100)]">
+  <div class="narrow">
+    <p class="text-[var(--accent-700)] text-xs font-bold tracking-widest mb-3 text-center">INVESTMENT</p>
+    <h2 class="sec-title sec-title--center mb-4">FC条件・開業費用</h2>
+
+    <!-- 緊急性: アンカリング -->
+    <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center mb-8">
+      <p class="text-red-600 text-xs font-bold mb-1">0次募集 特別価格（5店舗目まで）</p>
+      <p class="text-sm text-[var(--neutral-700)]">通常加盟金 <span class="line-through text-[var(--neutral-500)]">300万円</span> → <span class="text-red-600 font-black text-xl">100万円</span></p>
+      <p class="text-[10px] text-[var(--neutral-500)] mt-1">※ 段階的に引き上げ予定。お早めにご検討ください。</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-3 mb-8">
+      {[
+        { label: '加盟金', val: '100', unit: '万円', note: '0次募集限定価格', accent: true },
+        { label: 'ロイヤリティ', val: '月額11', unit: '万円', note: '固定制・売上歩合なし', accent: false },
+        { label: '投資回収', val: '約14', unit: 'ヶ月', note: '1ヶ月目から黒字', accent: true },
+      ].map((c) => (
+        <div class="card p-4 text-center">
+          <p class="text-[11px] text-[var(--neutral-500)] mb-2">{c.label}</p>
+          <p class="num text-2xl md:text-[1.75rem]">{c.val}<span class="text-xs font-bold">{c.unit}</span></p>
+          <p class={`text-[10px] mt-1.5 font-bold ${c.accent ? 'text-[var(--accent-700)]' : 'text-[var(--neutral-500)]'}`}>{c.note}</p>
+        </div>
+      ))}
+    </div>
+
+    <details class="card group">
+      <summary class="p-5 cursor-pointer flex items-center justify-between text-sm font-bold">
+        開業費用内訳（4台モデル）
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--neutral-300)] faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="px-5 pb-5 border-t border-gray-100 pt-4">
+        <table class="w-full text-sm">
+          <tbody>
+            {[
+              ['加盟金', '1,000,000円'],
+              ['販売研修費・コンサルティング費', '500,000円'],
+              ['内装デザイン費用', '300,000円'],
+              ['HP作成・SEO対策費用', '300,000円'],
+              ['協会認定資格取得費', '100,000円'],
+              ['よもぎ蒸しセット一式 x 4台', '640,000円'],
+              ['ガウン・クッション・カバー', '296,000円'],
+              ['ハーブ・化粧品・お茶', '200,000円'],
+            ].map(([item, price]) => (
+              <tr class="border-b border-gray-50">
+                <td class="py-2 text-[var(--neutral-500)]">{item}</td>
+                <td class="py-2 text-right font-medium tabular-nums">{price}</td>
+              </tr>
+            ))}
+            <tr class="border-t-2 border-gray-200">
+              <td class="py-2.5 font-bold">設備小計</td>
+              <td class="py-2.5 text-right font-bold tabular-nums">3,336,000円</td>
+            </tr>
+            <tr class="bg-[var(--accent-100)]">
+              <td class="py-3 px-2 font-bold text-[var(--primary-900)] rounded-l-lg">総額（不動産・内装・備品含む）</td>
+              <td class="py-3 px-2 text-right font-black text-base text-[var(--primary-900)] rounded-r-lg tabular-nums">約500万円〜</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <!-- 中間CTA #4 -->
+    <div class="mt-10 flex flex-col items-center">
+      <a href={L} class="cta"><Fragment set:html={CTA_ICON} />{CTA_LABEL}</a>
+      <p class="text-[var(--neutral-500)] text-[10px] mt-2">無料・30秒で完了</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUPPORT ===== -->
+<section class="sec bg-white">
+  <div class="narrow">
+    <p class="text-[var(--accent-700)] text-xs font-bold tracking-widest mb-3 text-center">SUPPORT</p>
+    <h2 class="sec-title sec-title--center mb-4">本部サポート体制</h2>
+    <p class="text-sm text-[var(--neutral-500)] text-center mb-10">開業前から開業後まで、ONブランドの全てをサポート</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      {[
+        { n: '1', t: '開業前サポート', items: ['立地・物件選定', '事業計画・収支設計', '開業スケジュール'] },
+        { n: '2', t: '技術・運営研修', items: ['施術研修', 'オペレーション・接客', 'マニュアル完備'] },
+        { n: '3', t: '集客・販促支援', items: ['集客導線の構築', 'HPB掲載・運用指導', 'オープン時集客'] },
+        { n: '4', t: '開業後フォロー', items: ['毎月のミーティング', '改善アドバイス', 'メニュー更新共有'] },
+      ].map((s) => (
+        <div class="bg-[var(--neutral-100)] rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-7 h-7 rounded-md bg-[var(--primary-700)] text-white flex items-center justify-center font-bold text-xs">{s.n}</span>
+            <h3 class="font-bold text-sm">{s.t}</h3>
+          </div>
+          <ul class="space-y-1.5 ml-10">
+            {s.items.map((item) => (
+              <li class="text-sm text-[var(--neutral-500)] flex items-center gap-2">
+                <span class="w-1 h-1 rounded-full bg-[var(--accent-500)] flex-shrink-0"></span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===== OWNER VOICE ===== -->
+<section class="sec bg-[var(--accent-100)]">
+  <div class="narrow">
+    <p class="text-[var(--accent-700)] text-xs font-bold tracking-widest mb-3 text-center">VOICE</p>
+    <h2 class="sec-title sec-title--center mb-10">加盟オーナーの声</h2>
+
+    <div class="space-y-4">
+      {[
+        { img: `${B}/images/owner-testimonial.png`, title: '開業2ヶ月目で黒字化', body: '「固定費が抑えられるビジネスモデルなので、想定より早く結果が出ました。技術がなくても始められて、数字が作りやすく、長く続けやすい。未経験でも仕組みとサポートがあれば十分に戦えます。」' },
+        { img: `${B}/images/owner-testimonial-2.png`, title: 'リピート率65% クレーム対応ほぼゼロ', body: '「ここに来るのが習慣になった、他のケアに戻れないと言っていただけることが増えています。施術に高度な技術が不要で、施術ミスが起きにくい。新人でもすぐ現場に立てます。」' },
+      ].map((v) => (
+        <div class="card p-5 md:p-6">
+          <div class="flex items-center gap-4 mb-4">
+            <img src={v.img} alt="" class="w-12 h-12 rounded-full object-cover ring-2 ring-[var(--accent-300)]" />
+            <div>
+              <p class="font-bold text-sm">{v.title}</p>
+              <p class="text-[11px] text-[var(--neutral-500)]">FCオーナー</p>
+            </div>
+          </div>
+          <p class="text-sm text-[var(--neutral-700)] leading-[1.85]">{v.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="sec bg-white">
+  <div class="narrow">
+    <p class="text-[var(--accent-700)] text-xs font-bold tracking-widest mb-3 text-center">REVIEWS</p>
+    <h2 class="sec-title sec-title--center mb-10">お客様の口コミ</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      {[
+        '初めてよもぎ蒸しを体験しました。たっぷり汗をかいてリフレッシュできました。お店はとても清潔感がありオシャレな内装です！仕事帰りに手ぶらで来られるのも◎',
+        '身体の中から温まりたい時に利用しています。お店から出た後はマフラー無しで、外の風が涼しいと感じる程、身体全体がポカポカしてます。',
+        '個室がゆったりしていて、よもぎの香りがとっても良くて癒されました。終わった後はいつもより体調が良い日が数日続いた気がします。',
+        '雰囲気が良く入った途端に優しいよもぎの香りが漂い癒されました。帰り道、脚や肩凝りが楽になっていて今朝も身体が楽で驚きました。',
+      ].map((r) => (
+        <div class="bg-[var(--neutral-100)] rounded-xl p-5">
+          <div class="flex gap-0.5 mb-2.5">
+            {Array.from({ length: 5 }).map(() => (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-[var(--accent-300)] fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            ))}
+          </div>
+          <p class="text-sm text-[var(--neutral-700)] leading-[1.85]">{r}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- 中間CTA #5 -->
+    <div class="mt-10 flex flex-col items-center">
+      <a href={L} class="cta"><Fragment set:html={CTA_ICON} />{CTA_LABEL}</a>
+      <p class="text-[var(--neutral-500)] text-[10px] mt-2">無料・30秒で完了</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec bg-[var(--neutral-100)]">
+  <div class="narrow">
+    <p class="text-[var(--accent-700)] text-xs font-bold tracking-widest mb-3 text-center">FAQ</p>
+    <h2 class="sec-title sec-title--center mb-10">よくある質問</h2>
+
+    <div class="space-y-2">
+      {[
+        { q: '未経験でも本当に大丈夫ですか？', a: 'はい。高度な施術技術・資格は一切不要です。お客様にハーブを選んでいただき、お茶を出すだけ。本部の研修制度でゼロから学べます。実際の加盟オーナーも全員未経験からスタートしています。' },
+        { q: '副業・兼業としても始められますか？', a: 'はい。技術不要なので、スタッフを1名採用すれば現場はお任せできます。副業・兼業オーナーとして始めた後、状況を見て専業に切り替えることも可能です。' },
+        { q: '初期費用はどのくらいかかりますか？', a: '4台モデルの場合、加盟金・設備・内装等の総額で約500万円〜が目安です。加盟金は現在100万円（0次募集・5店舗目まで）と、通常より低く設定しています。' },
+        { q: '開業までどのくらいかかりますか？', a: '約3〜4ヶ月（物件選定→契約→研修→オープン）が目安です。立地やオーナー様の状況により前後します。' },
+        { q: 'ロイヤリティはいくらですか？', a: '月額11万円の固定制です。売上歩合ではないため、売上が伸びるほどオーナー様の利益が大きくなる仕組みです。' },
+      ].map((f) => (
+        <details class="card group">
+          <summary class="p-5 cursor-pointer flex items-center justify-between">
+            <span class="font-bold text-sm pr-4">{f.q}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--neutral-300)] flex-shrink-0 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-[var(--neutral-500)] leading-[1.85]">{f.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA（損失回避 + 緊急性） ===== -->
+<section class="sec bg-[var(--primary-700)] text-white text-center texture-washi">
+  <div class="narrow relative z-10">
+    <span class="tag bg-red-600/90 text-white border-0 mb-4">0次募集は残りわずか</span>
+    <h2 class="text-2xl md:text-[1.75rem] font-bold mb-3" style="font-family:'Shippori Mincho',serif">この条件で始められるのは<br />今だけです</h2>
+    <p class="text-white/60 text-sm mb-3 leading-relaxed">加盟金100万円は0次募集（5店舗目まで）の特別価格です。<br />次回募集では300万円に引き上げ予定。</p>
+    <p class="text-white/45 text-sm mb-8 leading-relaxed">代表・嶋岡みのりが直営12ヶ月分の実績データを全て公開。<br />勧誘なし・90分でわかるFCの全貌。</p>
+
+    <div class="flex flex-col items-center">
+      <a href={L} class="cta text-lg py-5"><Fragment set:html={CTA_ICON} />{CTA_LABEL}</a>
+      <p class="text-white/50 text-[11px] mt-2">無料・30秒で完了</p>
+      <p class="text-white/25 text-[10px] mt-1">※ 強引な勧誘・押し売りは一切ありません</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="py-10 px-5 bg-[var(--primary-900)] text-center">
+  <p class="text-sm font-bold text-white/80 mb-1" style="font-family:'Shippori Mincho',serif">黄土よもぎ蒸し専門店「ON」FC事業部</p>
+  <p class="text-xs text-white/30 mb-6">株式会社rtma</p>
+  <p class="text-[10px] text-white/15">&copy; 2026 株式会社rtma</p>
+</footer>
+
+<!-- ===== FLOATING CTA（残枠表示付き） ===== -->
+<div class="float-bar">
+  <div class="flex flex-col items-center w-full">
+    <a href={L} class="cta"><Fragment set:html={CTA_ICON} />{CTA_LABEL}</a>
+    <p class="text-[9px] text-[var(--neutral-500)] mt-1">0次募集 残りわずか / 無料・30秒で完了</p>
+  </div>
+</div>
+
+<!-- ===== JS: スクロール進捗 + 閲覧者数ランダム ===== -->
+<script>
+  // スクロール進捗バー
+  const bar = document.getElementById('progress');
+  if (bar) {
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = h > 0 ? `${(window.scrollY / h) * 100}%` : '0%';
+    }, { passive: true });
+  }
+
+  // 閲覧者数（リアルタイム風）
+  const vc = document.getElementById('viewer-count');
+  if (vc) {
+    const base = 18 + Math.floor(Math.random() * 12);
+    vc.textContent = String(base);
+    setInterval(() => {
+      const current = parseInt(vc.textContent || '20');
+      const delta = Math.random() > 0.5 ? 1 : -1;
+      const next = Math.max(15, Math.min(38, current + delta));
+      vc.textContent = String(next);
+    }, 8000);
+  }
+</script>
+
+</Layout>
